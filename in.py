@@ -46,7 +46,8 @@ def ClockBut(token):
     Keyboard.key(Keyboard.VK_MEDIA_PLAY_PAUSE)
   elif('Volumes' in token):
     Vol = int(str(token).replace('Volumes',''))
-    Sound.volume_set(Vol, 0)
+    print(Vol)
+    Sound.volume_set(Vol)
   
  
   data = {
@@ -57,4 +58,6 @@ def ClockBut(token):
 
 
 if __name__=="__main__":
-    application.run(host='192.168.3.2', port='8000', debug=True, threaded=True)
+  application.run(host='192.168.3.2', port='8000', debug=True, threaded=True)
+  """ host - IP You WI-FI
+  """

@@ -10,16 +10,16 @@ function TakeKay(Key) {
         Pulls('Volumes' + b);
     } else {
         if (Key == "SS") {
-            dc = document.getElementById('SS');
-            console.log(dc);
             if (actives == false) {
+                dc = document.getElementById('SS');
                 dc.classList.add('ActiveMusic')
                 actives = true;
-                dc.innerHTML = '▶'
+                dc.innerHTML = '||'
             } else {
+                dc = document.getElementById('SS');
                 actives = false;
                 dc.classList.remove('ActiveMusic');
-                dc.innerHTML = '||'
+                dc.innerHTML = '▶'
             }
 
         }

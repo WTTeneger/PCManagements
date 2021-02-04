@@ -62,7 +62,7 @@ class Sound:
         """
         if Sound.__current_volume == None:
             Sound.__current_volume = 0
-            for i in range(0, 50):
+            for i in range(0,50):
                 Sound.volume_up()
 
 

@@ -10,8 +10,16 @@
 </head>
 <style>
     #Jost {
-        margin: 10% auto;
+        margin-top: 10%;
         text-align: center;
+    }
+    
+    .GridRow {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 70%;
+        max-width: 700px;
+        margin: 0 auto;
     }
     
     .bb {
@@ -72,7 +80,7 @@
         text-decoration: none;
         display: inline-block;
         margin: 10px 20px;
-        padding: 15px 30px;
+        padding: 15px 0px;
         overflow: hidden;
         border: 2px solid;
         border-bottom-width: 4px;
@@ -83,33 +91,36 @@
         color: rgba(30, 255, 188, 1);
         background: url(https://html5book.ru/wp-content/uploads/2015/10/background54.png);
         transition: color .3s, background .5s;
+        border-radius: 20px;
     }
     
     #SS {
         transform: scale(1.3);
     }
     
-    #Left:hover {
-        animation: stripesLeft .75s infinite linear;
-        background: url(https://html5book.ru/wp-content/uploads/2015/10/background54.png);
-        background-size: 100%;
-        color: #FF50E5;
-    }
-    
-    #SS:hover {
-        background-size: 100%;
-        color: #FF50E5;
+    @media (min-width: 750px) {
+        #Left:hover {
+            animation: stripesLeft .75s infinite linear;
+            background: url(https://html5book.ru/wp-content/uploads/2015/10/background54.png);
+            background-size: 100%;
+            color: #FF50E5;
+        }
+        #SS:hover {
+            color: #FF50E5;
+        }
+        #Right:hover {
+            animation: stripesRight .75s infinite linear;
+            background: url(https://html5book.ru/wp-content/uploads/2015/10/background54.png);
+            background-size: 100%;
+            color: #FF50E5;
+        }
+        #pullVol {
+            display: none;
+        }
     }
     
     .ActiveMusic {
         animation: stripesPause .75s infinite linear;
-    }
-    
-    #Right:hover {
-        animation: stripesRight .75s infinite linear;
-        background: url(https://html5book.ru/wp-content/uploads/2015/10/background54.png);
-        background-size: 100%;
-        color: #FF50E5;
     }
     
     @keyframes stripesRight {
@@ -142,27 +153,60 @@
     body {
         background: #1D1B26;
     }
+    
+    .Fouters {
+        margin-top: 28%;
+        text-align: center;
+    }
+    
+    .Fouters h1 {
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        font-size: 25px;
+        font-weight: bold;
+    }
 </style>
 
 
+<style>
+    .bb {
+        font-size: calc(14px + (18 - 14) * ( (100vw - 480px) / ( 1024 - 480)))
+    }
+    
+    @media (max-width: 750px) {
+        .GridRow {
+            width: 90%;
+        }
+    }
+</style>
 
 
 <body>
     <div id='Jost'>
-        <button onclick="TakeKay('Left')" id='Left' class="unselectable bb animated-button">Prev</button>
+        <div class="GridRow">
+            <button onclick="TakeKay('Left')" id='Left' class="unselectable bb animated-button">Prev</button>
 
-        <button onclick="TakeKay('SS')" id='SS' class="bb unselectable ActiveMusic animated-button" class="bb">Start/Stop</button>
+            <button onclick="TakeKay('SS')" id='SS' class="bb unselectable ActiveMusic animated-button" class="bb">||</button>
 
-        <button onclick="TakeKay('Right')" id='Right' class="unselectable bb animated-button">Next</button>
+            <button onclick="TakeKay('Right')" id='Right' class="unselectable bb animated-button">Next</button>
+        </div>
+
         <br>
         <div class="VolLine">
             <label class="VText">VOL: <span id='lbl' >NoN</span></label>
             <br>
-            <input onclick="TakeKay('Volumes')" id='VolumesID' type="range" min="0" max="100" step="1" value="50">
+            <input onclick="TakeKay('Volumes')" id='VolumesID' type="range" min="0" max="100" step="1" value="50"><br>
+            <button onclick="TakeKay('Volumes')" id='pullVol' class="unselectable bb animated-button">pull</button>
         </div>
-
+        <footer class="Fouters">
+            <h1>made in Sochi.</h1>
+        </footer>
     </div>
+
 </body>
+
+
 
 <script>
 </script>
