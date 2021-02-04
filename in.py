@@ -1,4 +1,9 @@
 #!/usr/bin/env python
+"""
+Author: WTTeneger (https://github.com/WTTeneger)
+"""
+
+
 from flask import Flask, render_template, request, session, Response, make_response, redirect, jsonify
 import datetime
 import sqlite3
@@ -29,6 +34,10 @@ def index():
 
 @application.route('/ClockBut/<string:token>', methods=["POST","GET"])
 def ClockBut(token):
+  """The function of processing the pressed button on the server
+  Args:
+      token (str): accepts the name of the pressed button
+  """
   print(token)
   if(token == 'Left'):
     Keyboard.key(Keyboard.VK_MEDIA_PREV_TRACK)
@@ -40,18 +49,12 @@ def ClockBut(token):
     Vol = int(str(token).replace('Volumes',''))
     Sound.volume_set(Vol)
   
-  
+ 
   data = {
-    "text": 'nr',
     'static': 'true',
     'code': token
   }
   return(jsonify(data))
-
-
-# @application.errorhandler(404)
-# def page_not_found(e):
-#     return render_template("errors.html") #('404.html')
 
 
 if __name__=="__main__":

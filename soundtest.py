@@ -6,8 +6,8 @@ from keyb import Keyboard
 class Sound:
     """
     Class Sound
-    :author: Paradoxis <luke@paradoxis.nl>
-    :description:
+    :author: WTTeneger (https://github.com/WTTeneger)
+    :description: NiseControll
     Allows you control the Windows volume
     The first time a sound method is called, the system volume is fully reset.
     This triggers sound and mute tracking.

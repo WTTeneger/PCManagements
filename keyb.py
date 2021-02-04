@@ -1,6 +1,5 @@
 """
-C struct definitions credit
-Author: LucasG (https://github.com/lucasg)
+Author: WTTeneger (https://github.com/WTTeneger)
 Source: http://stackoverflow.com/questions/13564851/generate-keyboard-events
 """
 
@@ -55,7 +54,7 @@ class Input(ctypes.Structure):
 class Keyboard:
     """
     Class Keyboard
-    :author: Paradoxis <luke@paradoxis.nl>
+    :author: WTTeneger (https://github.com/WTTeneger)
     :description:
     Keyboard methods to trigger fake key events
     """
