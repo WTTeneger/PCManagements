@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../static/jquery.js" type="text/javascript"></script>
     <script src="../static/main.js" type="text/javascript"></script>
-    <title>Document</title>
+    <title>PCManagements</title>
 </head>
 <style>
     #Jost {
@@ -97,10 +97,12 @@
     }
     
     #SS:hover {
-        animation: stripesPause .75s infinite linear;
-        background: url(https://html5book.ru/wp-content/uploads/2015/10/background54.png);
         background-size: 100%;
         color: #FF50E5;
+    }
+    
+    .ActiveMusic {
+        animation: stripesPause .75s infinite linear;
     }
     
     #Right:hover {
@@ -149,7 +151,7 @@
     <div id='Jost'>
         <button onclick="TakeKay('Left')" id='Left' class="unselectable bb animated-button">Prev</button>
 
-        <button onclick="TakeKay('SS')" id='SS' class="bb unselectable animated-button" class="bb">Start/Stop</button>
+        <button onclick="TakeKay('SS')" id='SS' class="bb unselectable ActiveMusic animated-button" class="bb">Start/Stop</button>
 
         <button onclick="TakeKay('Right')" id='Right' class="unselectable bb animated-button">Next</button>
         <br>

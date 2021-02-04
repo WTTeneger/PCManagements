@@ -1,3 +1,5 @@
+actives = true;
+
 function TakeKay(Key) {
     console.log(Key);
     var re = /(Volumes)+/i;
@@ -7,6 +9,20 @@ function TakeKay(Key) {
         document.getElementById('lbl').innerHTML = b;
         Pulls('Volumes' + b);
     } else {
+        if (Key == "SS") {
+            dc = document.getElementById('SS');
+            console.log(dc);
+            if (actives == false) {
+                dc.classList.add('ActiveMusic')
+                actives = true;
+                dc.innerHTML = '▶'
+            } else {
+                actives = false;
+                dc.classList.remove('ActiveMusic');
+                dc.innerHTML = '||'
+            }
+
+        }
         Pulls(Key);
     }
 }

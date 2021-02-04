@@ -38,7 +38,6 @@ def ClockBut(token):
   Args:
       token (str): accepts the name of the pressed button
   """
-  print(token)
   if(token == 'Left'):
     Keyboard.key(Keyboard.VK_MEDIA_PREV_TRACK)
   elif(token == 'Right'):
@@ -47,7 +46,7 @@ def ClockBut(token):
     Keyboard.key(Keyboard.VK_MEDIA_PLAY_PAUSE)
   elif('Volumes' in token):
     Vol = int(str(token).replace('Volumes',''))
-    Sound.volume_set(Vol)
+    Sound.volume_set(Vol, 0)
   
  
   data = {

@@ -1,7 +1,7 @@
 
 
 from keyb import Keyboard
-
+import time
 
 class Sound:
     """
@@ -101,7 +101,7 @@ class Sound:
 
 
     @staticmethod
-    def volume_set(amount):
+    def volume_set(amount, timer = 0):
         """
         Set the volume to a specific volume, limited to even numbers.
         This is due to the fact that a VK_VOLUME_UP/VK_VOLUME_DOWN event increases
@@ -112,9 +112,12 @@ class Sound:
 
         if Sound.current_volume() > amount:
             for i in range(0, int((Sound.current_volume() - amount) / 2)):
+                time.sleep(timer)
                 Sound.volume_down()
+                
         else:
             for i in range(0, int((amount - Sound.current_volume()) / 2)):
+                time.sleep(timer)
                 Sound.volume_up()
 
     @staticmethod
