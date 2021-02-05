@@ -16,11 +16,10 @@ def index():
     return render_template('main.html')
 
 
-
 # @application.errorhandler(404)
 # def page_not_found(e):
 #     return render_template("errors.html") #('404.html')
 
 
 if __name__=="__main__":
-    application.run(host='192.168.3.2', port='8000', debug=True, threaded=True)
+    application.run(host='192.168.3.3', port='8000', debug=True, threaded=True)
